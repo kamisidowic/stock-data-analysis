@@ -102,16 +102,16 @@ merged_profit_data = initial_profit_df.groupby(['symbol', 'buy_order_execution_t
 # Calculate holding days
 merged_profit_data['holding_days'] = (pd.to_datetime(merged_profit_data['sell_order_execution_time']) - pd.to_datetime(merged_profit_data['buy_order_execution_time'])).apply(lambda x: f"{x.days} days, {x.seconds // 3600} hours")
 
-# Save results to a CSV 
+# Save results to a CSV adn Excel
 
 # Total traded data
-# traded_file_path_excel = 'traded_data.xlsx'
-# sorted_traded_values.to_excel(traded_file_path_excel, index=False)
+traded_file_path_excel = 'traded_data.xlsx'
+sorted_traded_values.to_excel(traded_file_path_excel, index=False)
 
-# traded_file_path_csv = 'traded_data.csv'
-# sorted_traded_values.to_csv(traded_file_path_csv, index=False)
+traded_file_path_csv = 'traded_data.csv'
+sorted_traded_values.to_csv(traded_file_path_csv, index=False)
 
-# # Profit data
+# Profit data
 output_file_path_excel = 'realisedop.xlsx'
 merged_profit_data.to_excel(output_file_path_excel, index=False)
 
