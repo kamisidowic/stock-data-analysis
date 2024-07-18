@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the Excel file
-file_path = './excelf.xlsx'
+file_path = './input/excelf.xlsx'
 df = pd.read_excel(file_path)
 
 # Filter rows where Unrealized P&L is 0
